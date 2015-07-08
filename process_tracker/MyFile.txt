@@ -1,4 +1,2 @@
-Process : dllhost.exe  Was running for0 hours 0 minutes 3 seconds
+Process : dllhost.exe  Was running for0 hours 0 minutes 2 seconds
 Process : taskmgr.exe  Was running for0 hours 0 minutes 3 seconds
-Process : dllhost.exe  Was running for0 hours 0 minutes 8 seconds
-Process : notepad.exe  Was running for0 hours 0 minutes 3 seconds

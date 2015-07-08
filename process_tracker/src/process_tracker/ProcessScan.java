@@ -30,11 +30,12 @@ public class ProcessScan implements Runnable
 	@Override
 	public void run() 
 	{
+		HashMap<String, Calendar> closed = new HashMap<String,Calendar>();		//closed applications from last scan
+        closed = (HashMap<String, Calendar>) currentProcess.clone();
 		try 
 		  {
 		        String line;
-		        HashMap<String, Calendar> closed = new HashMap<String,Calendar>();		//closed applications from last scan
-		        closed = (HashMap<String, Calendar>) currentProcess.clone();
+		        
 		        Process p = Runtime.getRuntime().exec(System.getenv("windir") +"\\system32\\"+"tasklist.exe /fo csv /nh");	//current running processes
 		        BufferedReader input = new BufferedReader(new InputStreamReader(p.getInputStream()));
 		        while ((line = input.readLine()) != null) 
