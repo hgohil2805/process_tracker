@@ -52,7 +52,6 @@ public class ProcessScan implements Runnable
 		        	}
 		        		
 		        }
-		        //input.close();
 		        java.util.Iterator<Entry<String, Calendar>> it = closed.entrySet().iterator();
 		        System.out.println("Printing out closed process!");
 			    while (it.hasNext()) 
@@ -82,7 +81,6 @@ public class ProcessScan implements Runnable
 		int totalSeconds = (int)TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis() - start.getTimeInMillis());
 	    final int MINUTES_IN_AN_HOUR = 60;
 	    final int SECONDS_IN_A_MINUTE = 60;
-
 	    int seconds = totalSeconds % SECONDS_IN_A_MINUTE;
 	    int totalMinutes = totalSeconds / SECONDS_IN_A_MINUTE;
 	    int minutes = totalMinutes % MINUTES_IN_AN_HOUR;
@@ -91,9 +89,5 @@ public class ProcessScan implements Runnable
 	    return hours + " hours " + minutes + " minutes " + seconds + " seconds";
 	}
 	
-	private static void initiatizeWriter()
-	{
-		
-	}
 
 }
