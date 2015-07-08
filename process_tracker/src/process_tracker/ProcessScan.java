@@ -58,8 +58,8 @@ public class ProcessScan implements Runnable
 			    {
 			        Map.Entry pair = (Map.Entry)it.next();
 			        Calendar start = (Calendar) pair.getValue();
-			        System.out.println("Difference is: " +timeConversion(start));
-			        System.out.println(pair.getKey() + " =" );
+			        //System.out.println("Difference is: " +timeConversion(start));
+			        //System.out.println(pair.getKey() + " =" );
 			        String filename= "MyFile.txt";
 			        FileWriter fw = new FileWriter(filename,true); //the true will append the new data
 			        fw.write("Process : " + pair.getKey() +"  Was running for"+timeConversion(start));//appends the string to the file

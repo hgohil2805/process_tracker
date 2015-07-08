@@ -4,7 +4,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-public class test 
+public class StartApp 
 {
 
 	public static void main(String[] args) 
@@ -22,13 +22,6 @@ public class test
 		   * 4 - understand some of the method calls
 		   * */
 		  
-		  /*Iterator it = currentProcess.entrySet().iterator();
-		    while (it.hasNext()) {
-		        Map.Entry pair = (Map.Entry)it.next();
-		        System.out.println(pair.getKey() + " = " + pair.getValue());
-		        //it.remove(); // avoids a ConcurrentModificationException
-		    }
-		    */
 	}
 
 }
