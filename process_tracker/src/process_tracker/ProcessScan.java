@@ -33,22 +33,21 @@ public class ProcessScan implements Runnable
 		try 
 		  {
 		        String line;
-		        
-		        HashMap<String, Calendar> closed = new HashMap<String,Calendar>();
+		        HashMap<String, Calendar> closed = new HashMap<String,Calendar>();		//closed applications from last scan
 		        closed = (HashMap<String, Calendar>) currentProcess.clone();
-		        Process p = Runtime.getRuntime().exec(System.getenv("windir") +"\\system32\\"+"tasklist.exe /fo csv /nh");
+		        Process p = Runtime.getRuntime().exec(System.getenv("windir") +"\\system32\\"+"tasklist.exe /fo csv /nh");	//current running processes
 		        BufferedReader input = new BufferedReader(new InputStreamReader(p.getInputStream()));
 		        while ((line = input.readLine()) != null) 
 		        {
 		        	String[] details = line.split(",");
-		        	String current = details[0].replace("\"", "");
+		        	String current = details[0].replace("\"", "");			//splitting the csv to contain only the process name
 		        	if(currentProcess.containsKey(current))
 		        	{
-		        		closed.remove(current);
+		        		closed.remove(current);								//removing current open processed from the closed map
 		        	}
 		        	else
 		        	{
-		        		currentProcess.put(current, Calendar.getInstance());
+		        		currentProcess.put(current, Calendar.getInstance());	//new process added with current time
 		        	}
 		        		
 		        }
@@ -65,7 +64,7 @@ public class ProcessScan implements Runnable
 			        fw.write("Process : " + pair.getKey() +"  Was running for"+timeConversion(start));//appends the string to the file
 			        fw.write(System.getProperty( "line.separator" ));
 			        fw.close();
-			        currentProcess.remove(pair.getKey());
+			        currentProcess.remove(pair.getKey());			//remove the closed process from open hashmap
 			    }
 			   
 		    } 
