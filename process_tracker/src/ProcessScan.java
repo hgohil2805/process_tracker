@@ -12,19 +12,12 @@ import java.util.concurrent.TimeUnit;
 public class ProcessScan implements Runnable 
 {
 	HashMap<Process, Calendar> currentProcess = new HashMap<Process,Calendar>();
-	
+	RandomCreateDelete obj =  new RandomCreateDelete();;
 	
 	@Override
 	public void run() 
 	{
 		System.out.println("Inside the run of process scan");
-		
-		
-		HashMap<Process, Calendar> closed = new HashMap<Process, Calendar>();
-		closed = (HashMap<Process, Calendar>) currentProcess.clone();
-		
-		
-		RandomCreateDelete obj = new RandomCreateDelete();
 		obj.randomDeleteCreate();
 		
 		
@@ -46,6 +39,7 @@ public class ProcessScan implements Runnable
 			{
 				currentProcess.put(p, Calendar.getInstance());
 			}
+			
 		}
 		
 	}

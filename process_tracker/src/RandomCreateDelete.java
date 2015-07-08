@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Iterator;
 
 
 
@@ -28,16 +27,16 @@ public class RandomCreateDelete
 		this.randomDelete();
 	}
 	
+	
+	//Randomly generates processes and adds to the global list
 	private  void randomGenerate()
 	{
 		//ArrayList<Process> returnList = new ArrayList<Process>();
 		for(int i = 0 ; i < 5; i++)
 		{
 			double rand = Math.random();
-			System.out.println("Random value to generate the process is : " +rand);
 			if(rand > 0.7)
 			{
-				System.out.println("New Process Created");
 				int range = 3;
 				int pName = (int)(Math.random() * range);
 				Process p = new Process(names[pName]);
@@ -45,7 +44,7 @@ public class RandomCreateDelete
 			}
 		}
 	}
-	
+	// Goes through the global process list and randomly closes processes based on the random value
 	private  void randomDelete()
 	{
 
@@ -57,17 +56,15 @@ public class RandomCreateDelete
 				p.currentState = ProcessState.Closed;
 			}
 		}
-	
-		
 	}
 	
-	
+	//returns total Processes
 	public static ArrayList<Process> getTotalProcess()
 	{
 		return totalProcess;
 	}
 	
-	
+	//Removes a process p from the global process list
 	public static void removeProcess(Process p)
 	{
 		totalProcess.remove(p);
