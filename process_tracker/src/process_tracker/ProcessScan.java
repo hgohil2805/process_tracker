@@ -19,12 +19,6 @@ public class ProcessScan implements Runnable
 		System.out.println("Constructor");
 		
 	}
-	public static void main(String[] args) 
-	{
-		
-		ProcessScan obj = new ProcessScan();
-		obj.run();
-	}
 
 	@SuppressWarnings("unchecked")
 	@Override
@@ -62,7 +56,7 @@ public class ProcessScan implements Runnable
 			        fw.write("Process : " + pair.getKey() +"  Was running for"+timeConversion(start));//appends the string to the file
 			        fw.write(System.getProperty( "line.separator" ));
 			        fw.close();
-			        currentProcess.remove(pair.getKey());			//remove the closed process from open hashmap
+			        currentProcess.remove(pair.getKey());			//remove the closed process from open hashMap
 			    }
 			   
 		    } 
